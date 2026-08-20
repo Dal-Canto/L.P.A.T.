@@ -1,0 +1,10 @@
+name: "30-min study"
+duration: "30m"
+mode: medium
+allow_apps: ["phone","timer","notes"]
+block_notifications: true
+emergency:
+  enabled: true
+  methods: ["call_112"]
+metadata:
+  tags: ["study","school"]

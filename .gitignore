@@ -1,0 +1,14 @@
+# Byte-compiled files
+__pycache__/
+
+# Editor
+.vscode/
+.idea/
+
+# Logs and local artifacts
+*_summary.json
+*_emergency_exit.json
+*_unlock.json
+
+# Others
+.env

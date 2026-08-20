@@ -1,0 +1,10 @@
+name: "Bedtime"
+duration: "8h"
+mode: soft
+allow_apps: ["phone","alarm"]
+block_notifications: true
+emergency:
+  enabled: true
+  methods: ["call_112"]
+metadata:
+  tags: ["sleep"]

@@ -1,0 +1,10 @@
+name: "Weekend detox"
+duration: "6h"
+mode: medium
+allow_apps: ["phone","music"]
+block_notifications: true
+emergency:
+  enabled: true
+  methods: ["call_112","trusted_contact:+391234567890"]
+metadata:
+  tags: ["weekend","detox"]

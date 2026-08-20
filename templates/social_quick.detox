@@ -1,0 +1,10 @@
+name: "Social media quick check"
+duration: "10m"
+mode: soft
+allow_apps: ["phone","browser"]
+block_notifications: false
+emergency:
+  enabled: true
+  methods: ["call_112"]
+metadata:
+  tags: ["social"]

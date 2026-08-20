@@ -1,0 +1,13 @@
+name: "60-min focus"
+duration: "60m"
+mode: strict
+allow_apps: ["phone","timer"]
+block_notifications: true
+emergency:
+  enabled: true
+  methods: ["call_112"]
+metadata:
+  tags: ["challenge","focus"]
+share:
+  public: true
+  tags: ["60min","challenge"]

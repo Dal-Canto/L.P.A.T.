@@ -1,0 +1,10 @@
+name: "Homework sprint"
+duration: "45m"
+mode: strict
+allow_apps: ["phone","calculator","notes"]
+block_notifications: true
+emergency:
+  enabled: true
+  methods: ["call_112"]
+metadata:
+  tags: ["homework"]
