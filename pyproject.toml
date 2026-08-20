@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lpat"
+version = "0.1.0"
+description = "Linguaggio per il distacco dal telefono (L.P.A.T.)"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [ { name = "gargoalexdc-afk" } ]
+requires-python = ">=3.8"
+dependencies = ["PyYAML"]
+
+[project.scripts]
+lpat = "lpat.cli:main"
