@@ -1,3 +1,0 @@
-Come vedrete c'è il file .exe per windows ma io non posso creare i file esguibili di Linux, Mac e Android.
-Quindi me lo fatte voi con i vostri computer.
-Però proverò a creare i file con Copilot chat quando si sblocchera il 1 Set
