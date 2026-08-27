@@ -5,41 +5,39 @@ on:
 
 jobs:
   build:
-    name: Compila per ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        include:
-          - os: ubuntu-latest
-            artifact_name: lpat-linux
-            executable_name: phonefree_lang
-          - os: macos-13
-            artifact_name: lpat-macos-intel
-            executable_name: phonefree_lang
-          - os: macos-latest
-            artifact_name: lpat-macos-apple-silicon
-            executable_name: phonefree_lang
+        os: [ubuntu-latest, macos-latest]
 
     steps:
-      - name: Controlla il codice sorgente
-        uses: actions/checkout@v4
+    - name: Controlla codice sorgente
+      uses: actions/checkout@v4
 
-      - name: Configura Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+    - name: Configura Python
+      uses: actions/setup-python@v5
+      with:
+        python-file: '3.11'
 
-      - name: Installa le dipendenze
-        run: |
-          python -m pip install --upgrade pip
-          pip install pyinstaller lark
+    - name: Installa dipendenze
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller lark
 
-      - name: Compila con PyInstaller (Linux/macOS)
-        run: |
-          pyinstaller --onefile phonefree_lang.py
+    - name: Compila con PyInstaller (Linux)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        pyinstaller --onefile launcher.py
 
-      - name: Carica l'eseguibile come Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ matrix.artifact_name }}
-          path: dist/${{ matrix.executable_name }}*
+    - name: Compila con PyInstaller (Mac)
+      if: matrix.os == 'macos-latest'
+      run: |
+        pyinstaller --onefile --windowed launcher.py
+
+    - name: Carica file compilati
+      uses: actions/upload-artifact@v4
+      with:
+        name: L.P.A.T.-${{ matrix.os }}
+        path: |
+          dist/launcher
+          dist/launcher.app
